@@ -1,0 +1,7 @@
+{
+    "name" : "package-generic",
+    "version" : "0.0.1",
+    "description": "Generic package manager. Install packages using OS specific package managers (yum,apt-get)",
+    "url" : "https://github.com/melezhik/package-generic",
+    "engine" : "generic"
+}
