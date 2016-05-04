@@ -4,7 +4,7 @@ echo OK
 
 for p in $(config list)
 do
-  if test "${os}" = "ID=debian"; then
+  if test "${os}" = "ID=debian" || test "${os}" = "ID=ubuntu"; then
     run_story apt-get action install package $p
   fi
 done

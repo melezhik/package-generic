@@ -2,10 +2,10 @@
 
 Generic package manager. Installs packages using OS specific package managers.
 
-Package managers supported:
+OS supported:
 
-* apt (Debian)
-* yum (CentOS) - TODO
+* Debian,Ubuntu -  apt
+* CentOS - yum - TODO
 
 # USAGE
 
@@ -14,6 +14,7 @@ Package managers supported:
     $ sparrow check add system install-pkg
     $ sparrow check set system install-pkg package-generic
     $ sparrow check ini system install-pkg
+
     # the list of packages should be space separated list
     list = curl telnet nginx
 
