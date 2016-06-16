@@ -7,23 +7,28 @@ OS supported:
 * Debian,Ubuntu -  apt
 * CentOS - yum - TODO
 
-# USAGE
+# INSTALL
 
     $ sparrow plg install package-generic
+
+# USAGE
+
+
+    $ sparrow plg run package-generic --param list="'curl telnet nano'"
+
+# Plugin parameters
+
+## list
+
+should be space separated list of packages to install. Example of usage by sparrow task:
+ 
+  
     $ sparrow project create system
-    $ sparrow check add system install-pkg
-    $ sparrow check set system install-pkg package-generic
-    $ sparrow check ini system install-pkg
+    $ sparrow task add system handy-packages package-generic
+    $ sparrow task ini system handy-packages
 
-    # the list of packages should be space separated list
-    list = curl telnet nginx
-
-    $ sparrow check run system install-pkg
-
-# Runtime configuration 
-
-    $ sparrow check run system install-pkg --param list='foo bar baz'
+    list nano hunspell mc
 
 # AUTHOR
 
-Alexey Melezhik
+[Alexey Melezhik](mailto:melezhik@gmail.com)
