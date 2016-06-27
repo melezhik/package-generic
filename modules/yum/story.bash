@@ -1,7 +1,8 @@
 package=$(story_var package)
 
-echo $package
-yum -y install $package >/dev/null
+echo trying to install $package ... 
+
+yum -y -q install $package 
 
 yum -q list installed $package &>/dev/null && echo "Installed" || echo "Not installed"
 
