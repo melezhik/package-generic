@@ -5,7 +5,7 @@ Generic package manager. Installs packages using OS specific package managers.
 OS supported:
 
 * Debian,Ubuntu -  apt
-* CentOS - yum - TODO
+* CentOS - yum
 
 # USAGE
 
