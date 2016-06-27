@@ -1,10 +1,7 @@
 os=`cat /etc/*-release|grep -e ^ID=`
 
-
 for p in $(config list)
 do
-
-  set_stdout $os
 
   if [[ "$os" =~ "debian" ]]; then 
     run_story apt-get action install package $p
