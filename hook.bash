@@ -6,7 +6,7 @@ for p in $(config list)
 do
   if test "${os}" = "ID=debian" || test "${os}" = "ID=ubuntu"; then
     run_story apt-get action install package $p
-  elsif test "${os}" = "ID=debian" || test "${os}" = "ID=centos"; then
+  elif test "${os}" = "ID=centos"; then
     run_story yum action install package $p 
   fi
 done
