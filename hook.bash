@@ -1,14 +1,19 @@
 os=`cat /etc/*-release|grep -e ^ID=`
-echo $os
-echo OK
+
 
 for p in $(config list)
 do
-  if test "${os}" = "ID=debian" || test "${os}" = "ID=ubuntu"; then
+
+  set_stdout $os
+
+  if [[ "$os" =~ "debian" ]]; then 
     run_story apt-get action install package $p
-  elif test "${os}" = "ID=centos"; then
-    run_story yum action install package $p 
+  elif [[ "$os" =~ "ubuntu" ]]; then 
+    run_story apt-get action install package $p
+  elif [[ "$os" =~ "centos" ]]; then
+    run_story yum action install package $p
   fi
+
 done
 
 set_stdout done
