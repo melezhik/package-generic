@@ -1,7 +1,5 @@
 os=`uname -a`
 
-set_stdout $os
-
 shopt -s nocasematch;
 
 for p in $(config list)
@@ -17,4 +15,4 @@ do
 
 done
 
-set_stdout done
+set_stdout package-generic-done

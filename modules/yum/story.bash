@@ -1,6 +1,7 @@
 package=$(story_var package)
 
-echo trying to install $package ... 
+echo trying to install $package ...
+echo installer - yum 
 
 yum -y -q install $package || exit 1
 
