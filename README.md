@@ -13,14 +13,13 @@ OS supported:
 
 # USAGE
 
-
     $ sparrow plg run package-generic --param list="'curl telnet nano'"
 
 # Plugin parameters
 
 ## list
 
-should be space separated list of packages to install. Example of usage by sparrow task:
+Should be space separated list of packages to install. Example of usage by sparrow task:
  
   
     $ sparrow project create system
@@ -28,6 +27,10 @@ should be space separated list of packages to install. Example of usage by sparr
     $ sparrow task ini system handy-packages
 
     list nano hunspell mc
+
+## action
+
+Should be one of two: `install|autoremove`. Autoremove is only supported for Debian, Ubuntu systems.
 
 # AUTHOR
 
