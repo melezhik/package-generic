@@ -31,6 +31,7 @@ Should be space separated list of packages to install. Example of usage by sparr
 ## action
 
 Should be one of two: `install|autoremove`. Autoremove is only supported for Debian, Ubuntu systems.
+Default value `install`;
 
 # AUTHOR
 

@@ -1,0 +1,22 @@
+use v6;
+
+use Sparrowdo;
+
+set_spl %(
+
+    package-generic-dev => 'https://github.com/melezhik/package-generic.git'
+
+);
+
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic-dev',
+  parameters => %( list => 'git curl' )
+);
+
+task_run  %(
+  task => 'install my packages',
+  plugin => 'package-generic-dev',
+  parameters => %( action => 'autoremove' )
+);
+
