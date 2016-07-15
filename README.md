@@ -13,19 +13,24 @@ OS supported:
 
 # USAGE
 
+## Manually 
+
     $ sparrow plg run package-generic --param list="'curl telnet nano'"
 
+## Sparrowdo
+
+    task_run  %(
+      task => 'install my packages',
+      plugin => 'package-generic',
+      parameters => %( list => 'nano hunspell mc' )
+    );
+    
 # Plugin parameters
 
 ## list
 
 Should be space separated list of packages to install. Example of usage by sparrow task:
  
-  
-    $ sparrow project create system
-    $ sparrow task add system handy-packages package-generic
-    $ sparrow task ini system handy-packages
-
     list nano hunspell mc
 
 ## action
