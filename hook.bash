@@ -1,6 +1,6 @@
 action=$(config action)
 
-os=`uname -a`
+os=`uname -a; cat /etc/issue`
 
 shopt -s nocasematch;
 
