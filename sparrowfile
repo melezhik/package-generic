@@ -15,7 +15,7 @@ task_run  %(
 );
 
 task_run  %(
-  task => 'install my packages',
+  task => 'remove old packages',
   plugin => 'package-generic-dev',
   parameters => %( action => 'autoremove' )
 );
