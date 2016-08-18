@@ -1,7 +1,5 @@
 action=$(config action)
 
-os=`uname -a; cat /etc/issue; cat /etc/*-release`
-
 shopt -s nocasematch;
 
 if test $action = "install"; then
