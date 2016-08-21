@@ -1,7 +1,7 @@
 my $action=config()->{action};
 
 
-unless ( os() eq 'debian2' or os() eq 'ubuntu' or os()=~/centos/){
+unless ( os() eq 'debian' or os() eq 'ubuntu' or os()=~/centos/){
   die "unsupported os: ".os();
 }
 
