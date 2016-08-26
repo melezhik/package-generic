@@ -11,6 +11,4 @@ else
   yum -q list installed $package || exit 1 
 fi
 
-echo done
-
 
