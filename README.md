@@ -4,7 +4,7 @@ Generic package manager. Installs packages using OS specific package managers.
 
 OS supported:
 
-* Debian,Ubuntu -  apt
+* Debian,Ubuntu - apt
 * CentOS - yum
 
 # INSTALL
@@ -19,10 +19,8 @@ OS supported:
 
 ## Sparrowdo
 
-    task_run  %(
-      task => 'install my packages',
-      plugin => 'package-generic',
-      parameters => %( list => 'nano hunspell mc' )
+    task-run 'install my packages', 'package-generic', %(
+      list => 'nano hunspell mc'
     );
     
 # Plugin parameters
@@ -37,6 +35,35 @@ Should be space separated list of packages to install. Example of usage by sparr
 
 Should be one of two: `install|autoremove`. Autoremove is only supported for Debian, Ubuntu systems.
 Default value `install`;
+
+# Installing OS depended packages 
+
+You may pass `list` as HASH with keys related to OS distribution names
+to handle packages respectively to OS, here is the example with using YAML format:
+
+    $ sparrow project create packages
+    $ sparrow task add package apache package-generic
+    $ sparrow task ini packages/apache
+    
+    list:
+      debian:
+        - apache2
+      centos:
+        - httpd 
+        - mod_ssl
+    
+    $ sparrow task run packages/apache
+
+
+Or using sparrowdo:
+
+    task-run 'install apache web server', 'package-generic', %(
+      list => %(
+        'debian' => ( 'apache2' ),
+        'centos' => ( 'httpd', 'mod_ssl' ),
+      )
+    );
+
 
 # AUTHOR
 
