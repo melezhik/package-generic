@@ -1,15 +1,12 @@
 my $action=config()->{action};
 
-
-unless ( os() eq 'debian' or os() eq 'ubuntu' or os()=~/centos/){
-  die "unsupported os: ".os();
-}
-
 my $list = config()->{list};
-
 
 if ($action eq 'install'){
 
+  # update apk repository index	
+  run_story("apk-update") if os() eq 'alpine';
+	
   if (ref $list and (ref $list  eq 'HASH') ){ # a package list is given as HASH
     for my $os (keys %$list) {
       next unless $os eq os(); # install only packages for a target OS
@@ -36,6 +33,8 @@ sub install_package {
     run_story('apt-get', { action => 'install', package => $p });
   } elsif ( $os eq 'ubuntu'){
     run_story('apt-get', { action => 'install', package => $p });
+  } elsif ( $os eq 'alpine'){
+    run_story('apk', { action => 'install', package => $p });
   } else {
     run_story('yum', { action => 'install', package => $p });
   }

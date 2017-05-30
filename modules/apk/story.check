@@ -1,0 +1,4 @@
+begin:
+regexp: Installed:\s+Available:
+regexp: \S+\s+=\s+\S+ 
+end:

@@ -4,9 +4,10 @@ Generic package manager. Installs packages using OS specific package managers.
 
 OS supported:
 
-* Debian,Ubuntu - apt
-* CentOS - yum
-
+* Debian, Ubuntu - apt
+* CentOS, Fedora - yum
+* Alpine Linux   - apk
+  
 # INSTALL
 
     $ sparrow plg install package-generic
