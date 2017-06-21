@@ -7,6 +7,7 @@ OS supported:
 * Debian, Ubuntu - apt
 * CentOS, Fedora - yum
 * Alpine Linux   - apk
+* Archlinux      - pacman
   
 # INSTALL
 
