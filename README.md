@@ -17,7 +17,7 @@ OS supported:
 
 ## Manually 
 
-    $ sparrow plg run package-generic --param list="'curl telnet nano'"
+    $ sparrow plg run package-generic --param list='curl telnet nano'
 
 ## Sparrowdo
 
