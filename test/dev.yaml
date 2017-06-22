@@ -1,8 +1,0 @@
-list:
-  archlinux:
-    - ranger
-    - git 
-    - atop
-  centos:
-    - tmux
-    - git 
