@@ -9,7 +9,7 @@ task-run 'install some packages', 'package-generic', %(
         'git',
         'atop',
     ),
-    centos => (
+    centos7 => (
         'tmux',
         'git'
     )

@@ -62,7 +62,7 @@ Or using sparrowdo:
     task-run 'install apache web server', 'package-generic', %(
       list => %(
         'debian' => ( 'apache2' ),
-        'centos' => ( 'httpd', 'mod_ssl' ),
+        'centos7' => ( 'httpd', 'mod_ssl' ),
       )
     );
 
