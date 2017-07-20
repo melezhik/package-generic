@@ -1,1 +1,1 @@
-apk update
+apk update --wait 120
