@@ -35,6 +35,8 @@ sub install_package {
     run_story('apt-get', { action => 'install', package => $p });
   } elsif ( $os eq 'alpine'){
     run_story('apk', { action => 'install', package => $p });
+  } elsif ( $os eq 'minoca'){
+    run_story('opkg', { action => 'install', package => $p });
   } elsif ( $os eq 'archlinux'){
     run_story('pacman', { action => 'install', package => $p });
   } else {
