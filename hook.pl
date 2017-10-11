@@ -39,8 +39,15 @@ sub install_package {
     run_story('opkg', { action => 'install', package => $p });
   } elsif ( $os eq 'archlinux'){
     run_story('pacman', { action => 'install', package => $p });
-  } else {
+  } elsif ( $os =~ /centos/i ){
     run_story('yum', { action => 'install', package => $p });
+  } elsif ( $os =~ /amazon/i ){
+    run_story('yum', { action => 'install', package => $p });
+  } elsif ( $os =~ /fedora/i ){
+    run_story('yum', { action => 'install', package => $p });
+  } else {
+    #run_story('yum', { action => 'install', package => $p });
+    set_stdout("warning! unknown os - $os , skip package install");
   }
   return;
 }
